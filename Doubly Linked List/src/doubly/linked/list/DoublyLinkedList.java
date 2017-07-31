@@ -136,7 +136,9 @@ public class DoublyLinkedList {
                     throw new IllegalArgumentException();
                 }
 
-                n.prev = current.prev;
+                if (current.prev == first) {
+                    n.prev = null;
+                }
                 n.next = current;
                 current.prev.next = n;
                 current.prev = n;
@@ -147,7 +149,9 @@ public class DoublyLinkedList {
                 if (current == last) {
                     throw new IllegalArgumentException();
                 }
-                n.next = current.next;
+                if (current.next == last) {
+                    n.next = null;
+                }
                 n.prev = current;
                 current.next.prev = n;
                 current.next = n;
@@ -178,7 +182,7 @@ public class DoublyLinkedList {
             if (current == null) {
                 break;
             }
-            System.out.println(current);
+            System.out.println(current.item);
             current = current.next;
         }
     }

@@ -19,10 +19,10 @@ public class DoublyLinkedListTest {
         L.insert("Bob", DoublyLinkedList.position.FIRST);
         L.traverse();
         System.out.println(L.getPosition());
-//        L.insert("Steve", DoublyLinkedList.position.FIRST);
-//        L.traverse();
-//        System.out.println(L.getPosition());
-//        L.insert("Chelsea", DoublyLinkedList.position.FOLLOWING);
+        L.insert("Steve", DoublyLinkedList.position.FIRST);
+        L.traverse();
+        System.out.println(L.getPosition());
+        L.insert("Chelsea", DoublyLinkedList.position.FOLLOWING);
 //        L.traverse();
 //        System.out.println(L.getPosition());
 //        L.insert("book", DoublyLinkedList.position.FOLLOWING);
