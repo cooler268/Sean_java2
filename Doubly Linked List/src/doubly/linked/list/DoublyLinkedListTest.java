@@ -16,21 +16,53 @@ public class DoublyLinkedListTest {
      */
     public static void main(String[] args) {
         DoublyLinkedList L = new DoublyLinkedList();
-        L.insert("Bob", DoublyLinkedList.position.FIRST);
+        
+        L.insert("Wokfu", DoublyLinkedList.position.FIRST);
         L.traverse();
         System.out.println(L.getPosition());
-        L.insert("Steve", DoublyLinkedList.position.FIRST);
+        
+        L.insert("Elyotropes", DoublyLinkedList.position.FIRST);
         L.traverse();
         System.out.println(L.getPosition());
-        L.insert("Chelsea", DoublyLinkedList.position.FOLLOWING);
-//        L.traverse();
-//        System.out.println(L.getPosition());
-//        L.insert("book", DoublyLinkedList.position.FOLLOWING);
-//        L.traverse();
-//        System.out.println(L.getPosition());
-//        L.insert("table", DoublyLinkedList.position.LAST);
-//        L.traverse();
-//        System.out.println(L.getPosition());
+        
+        L.insert("Shu-shu", DoublyLinkedList.position.FOLLOWING);
+        L.traverse();
+        System.out.println(L.getPosition());
+        
+        L.insert("book", DoublyLinkedList.position.FOLLOWING);
+        L.traverse();
+        System.out.println(L.getPosition());
+        
+        L.setPosition(DoublyLinkedList.position.PREVIOUS);
+        System.out.println(L.getPosition());
+        
+        L.insert("foo", DoublyLinkedList.position.PREVIOUS);
+        L.traverse();
+        System.out.println(L.getPosition());
+        
+        L.insert("animated documentary", DoublyLinkedList.position.LAST);
+        L.traverse();
+        System.out.println(L.getPosition());
+        
+        L.delete();
+        L.traverse();
+        System.out.println(L.getPosition());
+        
+        L.setPosition(DoublyLinkedList.position.FIRST);
+        L.traverse();
+        System.out.println(L.getPosition());
+        
+        L.delete();
+        L.traverse();
+        System.out.println(L.getPosition());
+        
+        L.setPosition(DoublyLinkedList.position.FOLLOWING);
+        L.traverse();
+        System.out.println(L.getPosition());
+        
+        L.delete();
+        L.traverse();
+        System.out.println(L.getPosition());
 
     }
 

@@ -105,6 +105,7 @@ public class DoublyLinkedList {
                 last = last.prev;
                 last.next = null;
                 current = last;
+                currentPosition--;
             } else {
                 current.prev.next = current.next;
                 current.next.prev = current.prev;
@@ -124,7 +125,6 @@ public class DoublyLinkedList {
                 } else {
                     n.next = first;
                     first.prev = n;
-                    n.prev = null;
                     first = n;
                 }
                 setPosition(position.FIRST);
@@ -149,13 +149,12 @@ public class DoublyLinkedList {
                 if (current == last) {
                     throw new IllegalArgumentException();
                 }
-                if (current.next == last) {
-                    n.next = null;
-                }
+                n.next = current.next;
                 n.prev = current;
                 current.next.prev = n;
                 current.next = n;
                 current = n;
+                currentPosition++;
                 break;
 
             case LAST:
@@ -177,13 +176,13 @@ public class DoublyLinkedList {
     }
     
     public void traverse() {
-        current = first;
+        node tmp= first;
         while (true) {
-            if (current == null) {
+            if (tmp == null) {
                 break;
             }
-            System.out.println(current.item);
-            current = current.next;
+            System.out.println(tmp.item);
+            tmp = tmp.next;
         }
     }
 
