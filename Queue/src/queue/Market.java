@@ -32,7 +32,6 @@ public class Market {
             this.numShares--;
         }
         double sumBP = sum(buyPrices);
-        System.out.println(sumBP);
         double gainsIncr = (numShares * SellPrice) - sumBP;
         gains += gainsIncr;
         System.out.println("Your gains increased by: " + gainsIncr);

@@ -11,31 +11,42 @@ public class App {
     
     public static void main(String[] args) {
         Market market = new Market();
-        Random random = new Random();
         Scanner sc = new Scanner(System.in);
+        Random random = new Random();
         
-        System.out.println("Hello, and welcome to the stock market thing.\n\n");
+        System.out.println("Hello, and welcome to the stock market thing.\n");
         
-        
-        System.out.println("do you want to use (1) buy (2) sell (3) see gains or (4) quit?\n"
-                + "Enter an integer b/w 1 and 4");
-        
-        int choice = sc.nextInt();
-        switch (choice) {
-            case (1):
-                break;
-            case (2):
-                break;
-            case (3):
-                break;
-            case (4):
-                break;
-            
-            
+        boolean quit = false;
+        while (!quit) {
+            double stockPrice = random.nextInt(50) / 2;
+            System.out.println("\nThe stock price today is: " + stockPrice
+                    + "\n\nDo you want to (1) buy (2) sell (3) see gains or (4) quit?\n"
+                    + "Enter an integer b/w 1 and 4");
+
+            int choice = sc.nextInt();
+            switch (choice) {
+                case (1):
+                    System.out.println("\nHow many stocks do you want to buy?");
+                    int stockNumBuy = sc.nextInt();
+                    market.buyShares(stockNumBuy, stockPrice);
+                    break;
+                case (2):
+                    System.out.println("\nHow many stocks do you want to sell?");
+                    int stockNumSell = sc.nextInt();
+                    market.sellShares(stockNumSell, stockPrice);
+                    break;
+                case (3):
+                    System.out.println("\nGains: " + market.getGains() + "\n");
+                    break;
+                case (4):
+                    quit = true;
+                    break;
+                default:
+                    System.out.println("\nPlease enter an integer between 1 and 4 (inclusive).\n");
+
+
+            }
         }
-    }
-    
-    public void buy () {
         
     }
     
